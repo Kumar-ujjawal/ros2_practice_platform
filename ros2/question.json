@@ -1,0 +1,28 @@
+{
+    "question": "Create a ROS2 service and client to calculate the factorial of a given non-negative integer.",
+    "requirements": [
+        "Create a ROS2 service that takes an integer as input (using a custom message type) and returns the factorial of that integer (also using a custom message type).",
+        "Create a ROS2 client that sends requests to the service with different integer inputs and prints the responses received from the service.",
+        "Handle potential errors, like negative input values, gracefully. Return -1 in case of an invalid input."
+    ],
+    "expected_output": "The client should print the factorial for valid inputs and -1 for invalid inputs. For example:\n\nInput: 5\nOutput: 120\n\nInput: -2\nOutput: -1\n\nInput: 0\nOutput: 1",
+    "hints": [
+        "Use the `int64` type for the input and output messages.",
+        "Consider using a loop for factorial calculation within the service callback."
+    ],
+    "solution_reference": "https://github.com/ros2/examples/tree/humble/rclcpp/minimal_service",
+    "test_commands": [
+        "ros2 run factorial_service factorial_server.py",
+        "ros2 run factorial_service factorial_client.py 5",
+        "ros2 run factorial_service factorial_client.py -2",
+        "ros2 run factorial_service factorial_client.py 0"
+    ],
+    "evaluation_criteria": [
+        "The service node should compile and run without errors.",
+        "The client node should compile and run without errors.",
+        "The client should successfully send requests to the service.",
+        "The service should correctly calculate the factorial for non-negative inputs.",
+        "The service should return -1 for negative inputs.",
+        "The client should correctly print the responses from the service."
+    ]
+}

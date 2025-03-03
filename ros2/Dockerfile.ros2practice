@@ -1,0 +1,17 @@
+
+    FROM ros:humble
+    
+    # Install dependencies
+    RUN apt-get update && apt-get install -y         python3-pip         vim         nano         git         && rm -rf /var/lib/apt/lists/*
+        
+    # Create workspace
+    RUN mkdir -p /ros2_ws/src
+    WORKDIR /ros2_ws
+    
+    # Add question details
+    RUN mkdir -p /question
+    WORKDIR /question
+    
+    # Keep container running
+    CMD ["bash"]
+    

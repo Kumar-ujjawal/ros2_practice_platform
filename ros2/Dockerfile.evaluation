@@ -1,0 +1,16 @@
+
+        FROM ros:humble
+        
+        # Copy the solution
+        COPY solution/ /ros2_ws/src/
+        
+        # Set up workspace
+        WORKDIR /ros2_ws
+        
+        # Build the packages
+        RUN /bin/bash -c "source /opt/ros/humble/setup.bash && colcon build"
+        RUN /bin/bash -c "source install/setup.bash"
+        
+        # Run tests based on test commands
+        WORKDIR /ros2_ws
+        

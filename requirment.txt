@@ -1,0 +1,3 @@
+docker
+gradio
+google-generativeai
