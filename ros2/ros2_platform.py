@@ -89,7 +89,6 @@ def generate_question(category):
                             question_data = json.loads(json_text)
                     else:
                         # Third try: Look for JSON-like structure and clean it
-                        # This is a simple approach - you might need more sophisticated parsing
                         # Remove any markdown or text surrounding potential JSON
                         cleaned_text = response_text.strip()
                         # Try to find the starting { and ending } of JSON
